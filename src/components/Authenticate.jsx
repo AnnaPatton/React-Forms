@@ -9,6 +9,13 @@ export default function Authenticate({ token }) {
     // Pass this function to the onClick property of your button
 
     async function handleClick() {
+
+        // error handling: authentication
+        if (!token) {
+            setError("Please sign up first to authenticate a token.");
+            return;
+        }
+
         try {
             const response = await fetch('https://fsa-jwt-practice.herokuapp.com/authenticate', {
                 method: "GET",
@@ -28,7 +35,7 @@ return (
     <div>
       <h2>Authenticate</h2>
       {successMessage && <p>{successMessage}</p>}
-      {error && <p>{error}</p>}
+      {error && <p style={{color:"red"}}>{error}</p>}
       <button onClick={handleClick}>Authenticate Token</button>
     </div>
   );
