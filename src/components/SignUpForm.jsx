@@ -59,7 +59,7 @@ return (
 
         <label style ={{fontSize:"15px", margin: "5px", fontWeight:"bold"}}>
             {/* Assign each value property of your input to its corresponding state value. Similarly, pass each onChange property to a callback function. These callback functions should be defined to take an event, and pass the event.target.value to the corresponding useState setter. */}
-          Username: <input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+          Username: {username}<input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
         </label>
 
         {/* form validation: username */}
